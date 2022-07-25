@@ -45,7 +45,3 @@ public class ServiceUtil {
     }
   }
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
