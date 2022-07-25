@@ -1,7 +1,12 @@
-server.port: 7001
+server.port: 8080
 server.error.include-message: always
+
 
 logging:
   level:
     root: INFO
     com.microservices: DEBUG
+
+---
+server.port: 8080
+spring.config.activate.on-profile: docker

@@ -15,6 +15,10 @@ ext {
     springBootVersion = '2.5.2'
 }
 
+jar {
+    enabled = false
+}
+
 dependencies {
     implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
 
