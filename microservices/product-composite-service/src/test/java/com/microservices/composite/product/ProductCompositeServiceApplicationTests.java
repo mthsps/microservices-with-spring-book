@@ -6,7 +6,6 @@ import com.microservices.api.core.review.Review;
 import com.microservices.api.exceptions.InvalidInputException;
 import com.microservices.api.exceptions.NotFoundException;
 import com.microservices.composite.product.services.ProductCompositeIntegration;
-import com.microservices.util.http.ServiceUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
