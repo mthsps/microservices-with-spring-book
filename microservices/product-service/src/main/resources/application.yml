@@ -1,12 +1,19 @@
 server.port: 8080
 server.error.include-message: always
 
+spring.data.mongodb:
+  host: localhost
+  port: 27017
+  database: product-db
+
 
 logging:
   level:
     root: INFO
     com.microservices: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
 ---
 server.port: 8080
 spring.config.activate.on-profile: docker
+spring.data.mongodb.host: mongodb
