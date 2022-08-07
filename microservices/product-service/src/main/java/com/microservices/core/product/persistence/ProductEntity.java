@@ -1,4 +1,4 @@
-package com.microservices.core.product.persistance;
+package com.microservices.core.product.persistence;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;

@@ -1,7 +1,7 @@
 package com.microservices.core.review;
 
 import com.microservices.api.core.review.Review;
-import com.microservices.core.review.persistance.ReviewEntity;
+import com.microservices.core.review.persistence.ReviewEntity;
 import com.microservices.core.review.services.ReviewMapper;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;

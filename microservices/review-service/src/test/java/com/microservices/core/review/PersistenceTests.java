@@ -1,7 +1,7 @@
 package com.microservices.core.review;
 
-import com.microservices.core.review.persistance.ReviewEntity;
-import com.microservices.core.review.persistance.ReviewRepository;
+import com.microservices.core.review.persistence.ReviewEntity;
+import com.microservices.core.review.persistence.ReviewRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,7 @@ import static org.springframework.transaction.annotation.Propagation.NOT_SUPPORT
 
 @DataJpaTest
 @Transactional(propagation = NOT_SUPPORTED)
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-class PersistenceTests extends MySqlTestBase {
+public class PersistenceTests {
 
     @Autowired
     private ReviewRepository repository;
@@ -30,7 +29,7 @@ class PersistenceTests extends MySqlTestBase {
     private ReviewEntity savedEntity;
 
     @BeforeEach
-    void setupDb() {
+    public void setupDb() {
         repository.deleteAll();
 
         ReviewEntity entity = new ReviewEntity(1, 2, "a", "s", "c");
@@ -41,7 +40,7 @@ class PersistenceTests extends MySqlTestBase {
 
 
     @Test
-    void create() {
+    public void create() {
 
         ReviewEntity newEntity = new ReviewEntity(1, 3, "a", "s", "c");
         repository.save(newEntity);
@@ -53,7 +52,7 @@ class PersistenceTests extends MySqlTestBase {
     }
 
     @Test
-    void update() {
+    public void update() {
         savedEntity.setAuthor("a2");
         repository.save(savedEntity);
 
@@ -63,13 +62,13 @@ class PersistenceTests extends MySqlTestBase {
     }
 
     @Test
-    void delete() {
+    public void delete() {
         repository.delete(savedEntity);
         assertFalse(repository.existsById(savedEntity.getId()));
     }
 
     @Test
-    void getByProductId() {
+    public void getByProductId() {
         List<ReviewEntity> entityList = repository.findByProductId(savedEntity.getProductId());
 
         assertThat(entityList, hasSize(1));
@@ -77,7 +76,7 @@ class PersistenceTests extends MySqlTestBase {
     }
 
     @Test
-    void duplicateError() {
+    public void duplicateError() {
         assertThrows(DataIntegrityViolationException.class, () -> {
             ReviewEntity entity = new ReviewEntity(1, 2, "a", "s", "c");
             repository.save(entity);
@@ -86,7 +85,7 @@ class PersistenceTests extends MySqlTestBase {
     }
 
     @Test
-    void optimisticLockError() {
+    public void optimisticLockError() {
 
         ReviewEntity entity1 = repository.findById(savedEntity.getId()).get();
         ReviewEntity entity2 = repository.findById(savedEntity.getId()).get();
@@ -100,7 +99,7 @@ class PersistenceTests extends MySqlTestBase {
         });
 
         ReviewEntity updatedEntity = repository.findById(savedEntity.getId()).get();
-        assertEquals(1, updatedEntity.getVersion());
+        assertEquals(1, (int)updatedEntity.getVersion());
         assertEquals("a1", updatedEntity.getAuthor());
     }
 

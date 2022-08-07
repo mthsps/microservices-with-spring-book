@@ -1,7 +1,7 @@
 package com.microservices.core.review.services;
 
 import com.microservices.api.core.review.Review;
-import com.microservices.core.review.persistance.ReviewEntity;
+import com.microservices.core.review.persistence.ReviewEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

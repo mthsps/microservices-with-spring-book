@@ -1,7 +1,7 @@
 package com.microservices.core.product;
 
 import com.microservices.api.core.product.Product;
-import com.microservices.core.product.persistance.ProductEntity;
+import com.microservices.core.product.persistence.ProductEntity;
 import com.microservices.core.product.services.ProductMapper;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;

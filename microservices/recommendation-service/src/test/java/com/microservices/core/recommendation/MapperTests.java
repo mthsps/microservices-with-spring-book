@@ -1,7 +1,7 @@
 package com.microservices.core.recommendation;
 
 import com.microservices.api.core.recommendation.Recommendation;
-import com.microservices.core.recommendation.persistense.RecommendationEntity;
+import com.microservices.core.recommendation.persistence.RecommendationEntity;
 import com.microservices.core.recommendation.services.RecommendationMapper;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;

@@ -1,7 +1,7 @@
 package com.microservices.core.product.services;
 
 import com.microservices.api.core.product.Product;
-import com.microservices.core.product.persistance.ProductEntity;
+import com.microservices.core.product.persistence.ProductEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

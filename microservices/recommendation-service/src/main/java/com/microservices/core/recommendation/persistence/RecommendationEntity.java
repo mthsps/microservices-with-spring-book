@@ -1,4 +1,4 @@
-package com.microservices.core.recommendation.persistense;
+package com.microservices.core.recommendation.persistence;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;

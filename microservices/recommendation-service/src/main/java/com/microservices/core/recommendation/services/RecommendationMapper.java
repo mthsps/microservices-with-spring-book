@@ -1,7 +1,7 @@
 package com.microservices.core.recommendation.services;
 
 import com.microservices.api.core.recommendation.Recommendation;
-import com.microservices.core.recommendation.persistense.RecommendationEntity;
+import com.microservices.core.recommendation.persistence.RecommendationEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
